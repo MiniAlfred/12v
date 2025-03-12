@@ -36,6 +36,8 @@ body {
     border-radius: 10px;
     display: flex;
     align-items: center;
+    width: 100px; /* Set a fixed width for consistency */
+    justify-content: center; /* Center the content */
 }
 
 .navbar button .material-icons {
