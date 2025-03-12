@@ -5,6 +5,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: #121212; /* Dark background for the body */
+    color: #e0e0e0; /* Light text color */
 }
 
 .page {
@@ -15,29 +17,89 @@ body {
     align-items: center;
 }
 
+.battery-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.battery-item {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    padding: 10px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.battery-dial {
+    margin-top: 20px;
+}
+
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.percentage {
+    fill: #e0e0e0;
+    font-size: 0.5em;
+    text-anchor: middle;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
 .navbar {
     display: flex;
     justify-content: space-around;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+    background-color: #1f1f1f; /* Darker background for the navbar */
+    color: #e0e0e0; /* Light text color */
+    padding: 10px 10px; /* Add padding on left and right sides */
     position: fixed;
     bottom: 0;
     width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .navbar button {
     background: none;
     border: none;
-    color: white;
+    color: #e0e0e0; /* Light text color */
     font-size: 16px;
     cursor: pointer;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 20px; /* Increase padding on all four sides */
+    border-radius: 10px; /* Consistent border radius */
     display: flex;
     align-items: center;
     justify-content: center; /* Center the content */
-    flex: 1; /* Make buttons take equal space */
+    margin: 0 10px; /* Add margin between buttons */
+    width: calc(50% - 20px); /* Adjust width to fit within the navbar */
     -webkit-appearance: none; /* Remove default iOS styling */
     -moz-appearance: none; /* Remove default Firefox styling */
     appearance: none; /* Remove default styling */
@@ -50,12 +112,11 @@ body {
 }
 
 .navbar button.active {
-    background-color: #555;
-    border-radius: 20px;
+    background-color: #333; /* Slightly lighter background for active button */
 }
 
 .navbar button:hover {
-    background-color: #444;
+    background-color: #444; /* Slightly lighter background on hover */
 }
 
 .relay-buttons {
@@ -68,8 +129,8 @@ body {
 }
 
 .relay-button {
-    background-color: #333;
-    color: white;
+    background-color: #1f1f1f; /* Darker background for relay buttons */
+    color: #e0e0e0; /* Light text color */
     border: none;
     padding: 40px;
     font-size: 18px;
@@ -100,5 +161,14 @@ body {
 }
 
 .relay-button:hover {
-    background-color: #555;
+    background-color: #333; /* Slightly lighter background on hover */
+    border-radius: 10px; /* Consistent border radius */
+}
+
+/* Media query for portrait orientation on mobile devices */
+@media (max-width: 600px) and (orientation: portrait) {
+    .relay-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
 }

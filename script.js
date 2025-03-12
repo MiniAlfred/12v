@@ -15,4 +15,20 @@ function toggleRelay(button) {
 }
 
 // Set the initial active button
-document.getElementById('btnPage1').classList.add('active');
+document.getElementById('btnDashboard').classList.add('active');
+
+function updateGauge(percentage) {
+    
+    const circle = document.getElementById('batteryCircle');
+    const text = document.getElementById('batteryText');
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference - (percentage / 100) * circumference;
+
+    circle.style.strokeDasharray = `${circumference} ${circumference}`;
+    circle.style.strokeDashoffset = offset;
+    text.textContent = `${percentage}%`;
+}
+
+// Example usage: Update the gauge to 75%
+updateGauge(75);
