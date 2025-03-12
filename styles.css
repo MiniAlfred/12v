@@ -38,6 +38,9 @@ body {
     align-items: center;
     justify-content: center; /* Center the content */
     flex: 1; /* Make buttons take equal space */
+    -webkit-appearance: none; /* Remove default iOS styling */
+    -moz-appearance: none; /* Remove default Firefox styling */
+    appearance: none; /* Remove default styling */
 }
 
 .navbar button .material-icons {
@@ -76,6 +79,9 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    -webkit-appearance: none; /* Remove default iOS styling */
+    -moz-appearance: none; /* Remove default Firefox styling */
+    appearance: none; /* Remove default styling */
 }
 
 .relay-button::after {
