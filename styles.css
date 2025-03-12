@@ -36,13 +36,14 @@ body {
     border-radius: 10px;
     display: flex;
     align-items: center;
-    width: 100px; /* Set a fixed width for consistency */
     justify-content: center; /* Center the content */
+    flex: 1; /* Make buttons take equal space */
 }
 
 .navbar button .material-icons {
     margin-right: 8px;
     vertical-align: middle; /* Align icons with text */
+    line-height: 1; /* Ensure icons are vertically centered */
 }
 
 .navbar button.active {
@@ -52,4 +53,46 @@ body {
 
 .navbar button:hover {
     background-color: #444;
+}
+
+.relay-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.relay-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.relay-button::after {
+    content: '';
+    position: absolute;
+    bottom: 10px; /* Padding from the bottom */
+    left: 10px; /* Padding from the sides */
+    right: 10px; /* Padding from the sides */
+    height: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.relay-button.active::after {
+    background-color: limegreen;
+}
+
+.relay-button:hover {
+    background-color: #555;
 }

@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Page Web App</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div id="page1" class="page">
@@ -15,14 +14,21 @@
     </div>
     <div id="page2" class="page" style="display: none;">
         <h1>Page 2</h1>
-        <p>Welcome to Page 2!</p>
+        <div class="relay-buttons">
+            <button class="relay-button" onclick="toggleRelay(this)">Relay 1</button>
+            <button class="relay-button" onclick="toggleRelay(this)">Relay 2</button>
+            <button class="relay-button" onclick="toggleRelay(this)">Relay 3</button>
+            <button class="relay-button" onclick="toggleRelay(this)">Relay 4</button>
+            <button class="relay-button" onclick="toggleRelay(this)">Relay 5</button>
+            <button class="relay-button" onclick="toggleRelay(this)">Relay 6</button>
+        </div>
     </div>
     <nav class="navbar">
         <button id="btnPage1" onclick="showPage('page1')">
-            <span class="material-icons">battery profile</span> Page 1
+            <span class="material-icons">home</span> Page 1
         </button>
         <button id="btnPage2" onclick="showPage('page2')">
-            <span class="material-icons">apps</span> Page 2
+            <span class="material-icons">info</span> Page 2
         </button>
     </nav>
     <script src="script.js"></script>

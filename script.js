@@ -10,5 +10,9 @@ function showPage(pageId) {
     document.getElementById('btn' + pageId.charAt(0).toUpperCase() + pageId.slice(1)).classList.add('active');
 }
 
+function toggleRelay(button) {
+    button.classList.toggle('active');
+}
+
 // Set the initial active button
 document.getElementById('btnPage1').classList.add('active');
