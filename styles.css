@@ -14,7 +14,9 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+.navbar button .material-icons {
+    margin-right: 8px;
+    vertical-align: middle; /* Align icons with text */
 .navbar {
     display: flex;
     justify-content: space-around;
