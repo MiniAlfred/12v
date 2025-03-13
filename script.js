@@ -54,4 +54,4 @@ updateGauge(75);
 //}
 
 // Example usage: Update the gauge to 75%
-updateGauge(10);
+//updateGauge(10);
